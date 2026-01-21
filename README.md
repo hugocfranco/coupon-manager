@@ -61,7 +61,7 @@ A validação do funcionamento e a garantia de que as regras de negócio foram a
 3.  **Documentação Interativa (Swagger UI):**
     Após iniciar a aplicação, a documentação interativa da API está disponível em:
     `http://localhost:8080/swagger-ui.html`
-    Isso permite testar manualmente os endpoints `POST /coupon` e `DELETE /coupon/{id}`.
+    Isso permite testar manualmente os endpoints `POST /coupon`, `GET /coupon/{id}` e `DELETE /coupon/{id}`.
 
 ## 💡 Principais Decisões Técnicas
 
@@ -82,7 +82,6 @@ Com mais tempo disponível, as seguintes melhorias seriam implementadas para ele
 1.  **Persistência Real:** Substituir o banco de dados H2 em memória por uma solução robusta como **PostgreSQL**, configurando um container dedicado no `docker-compose.yml` para simular um ambiente de produção.
 2.  **Mapeamento de DTOs (MapStruct):** Implementar uma biblioteca de mapeamento (e.g., MapStruct) para remover o código boilerplate de conversão entre DTOs e Entidades, tornando o `CouponService` mais limpo e focado na lógica de negócio.
 3.  **Value Objects para o Código:** Criar um `Value Object` dedicado para o `CouponCode`. Isso encapsularia a lógica de limpeza e validação do código de forma mais isolada e reutilizável, aderindo ao princípio de **Tell, Don't Ask**.
-4.  **Implementação Completa da API:** Adicionar os endpoints de consulta (`GET /coupon/{id}` e `GET /coupon`) para completar o ciclo de vida do recurso.
-5.  **CI/CD Pipeline:** Configurar um pipeline básico (e.g., GitHub Actions) para automatizar a compilação, execução de testes e a construção da imagem Docker a cada *push*.
+4.  **CI/CD Pipeline:** Configurar um pipeline básico (e.g., GitHub Actions) para automatizar a compilação, execução de testes e a construção da imagem Docker a cada *push*.
 
 Agradeço a oportunidade e estou à disposição para discutir este projeto em mais detalhes.

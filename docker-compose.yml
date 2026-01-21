@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  coupon-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: coupon-manager-app
+    ports:
+      - "8080:8080"
+    restart: always
